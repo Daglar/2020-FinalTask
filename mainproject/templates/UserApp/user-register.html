@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4">
+					<div class="signup-form"><!--sign up form-->
+						<h2>Shop registration</h2>
+						<form action="" method='POST'>
+                    
+                            {{form.non_field_errors}}
+
+
+							{{form.name}}
+							{{form.name.errors}}
+
+                            {{form.shop_name}}
+							{{form.shop_name.errors}}
+
+                            {% comment %} {{form.shop_link}}
+							{{form.shop_link.errors}} {% endcomment %}
+
+                            {% csrf_token %}
+
+							{% comment %} <input type="text" placeholder="Name"/>
+                            <input type="text" placeholder="Shop name"/>
+							<input type="email" placeholder="Shop's website (not important)"/> {% endcomment %}
+							<button type="submit" class="btn btn-default">Register</button>
+						</form>
+					</div><!--/sign up form-->
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
+
+{% endblock content %} 
